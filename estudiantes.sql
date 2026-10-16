@@ -11,11 +11,11 @@ CREATE TABLE estudiantes(
 );
 -- insert datos --
 
-INSERT INTO estudiantes VALUES (1,'Luis','Carrillo',31,'Base de Datos','2026-01-10'); 
-INSERT INTO estudiantes VALUES (2,'Gustavo','Carrillo',32,'Programacion','2026-01-15');
-INSERT INTO estudiantes VALUES (3,'Kathy','Lopez',24,'Redes','2026-02-10'); 
-INSERT INTO estudiantes VALUES (4,'Andres','Ullauri',31,'Programacion','2026-02-15'); 
-INSERT INTO estudiantes VALUES (5,'Erick','Zapata',23,'Base de Datos','2026-03-01');
+INSERT INTO estudiantes VALUES (1,'Luis','Carrillo',31,'Base de Datos','2026-01-10', 'luis@gmail.com'); 
+INSERT INTO estudiantes VALUES (2,'Gustavo','Carrillo',32,'Programacion','2026-01-15', 'gustavo@gmail.com' );
+INSERT INTO estudiantes VALUES (3,'Kathy','Lopez',24,'Redes','2026-02-10', 'kathy@gmail.com'); 
+INSERT INTO estudiantes VALUES (4,'Andres','Ullauri',31,'Programacion','2026-02-15', 'andres@gmail.com'); 
+INSERT INTO estudiantes VALUES (5,'Erick','Zapata',23,'Base de Datos','2026-03-01', 'erick@gmail.com');
 INSERT INTO estudiantes VALUES (6,'Lizbeth','Quinllin',22,'Inteligencia Artificial','2026-03-10');
 INSERT INTO estudiantes VALUES (7,'Marcos','Alcivar',32,'Seguridad Informatica','2026-03-15');
 INSERT INTO estudiantes VALUES (8,'Jhon','Bassantes',31,'Redes','2026-04-01'); 
@@ -41,6 +41,12 @@ SELECT * FROM estudiantes WHERE fecha_registro > '2026-03-01';
 
 SELECT * FROM estudiantes WHERE fecha_registro BETWEEN '2026-01-01' AND '2026-04-30';
 
+SELECT nombres, apellidos, correo FROM estudiantes;
+
+SELECT * FROM estudiantes WHERE correo IS NOT NULL;
+
+SELECT nombres, apellidos, curso, correo FROM estudiantes WHERE curso = 'Base de Datos';
+
 -- UPDATE --
 
 UPDATE estudiantes SET curso = 'Inteligencia Artificial' WHERE id_estudiante = 1;
@@ -64,3 +70,15 @@ DELETE FROM estudiantes WHERE curso = 'Redes';
 DELETE FROM estudiantes WHERE nombres = 'Carlos';
 
 DELETE FROM estudiantes WHERE fecha_registro = '2026-01-15';
+
+-- MODIFICACION DE LA TABLA --
+
+ALTER TABLE estudiantes ADD COLUMN correo VARCHAR(100);
+
+-- ACTUALIZACION DE SCRIPTS --
+
+UPDATE estudiantes SET correo = 'luiscarrillo@hotmail.com' WHERE id_estudiante = 1; 
+
+UPDATE estudiantes SET correo = 'andres.ullauri@gmail.com' WHERE id_estudiante = 4;
+
+UPDATE estudiantes SET correo = 'erick.zapata@gmail.com' WHERE id_estudiante = 5;
