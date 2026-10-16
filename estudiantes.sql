@@ -52,3 +52,15 @@ UPDATE estudiantes SET fecha_registro = '2026-06-15' WHERE id_estudiante = 5;
 UPDATE estudiantes SET edad = 33, curso ='Seguridad Informatica' WHERE id_estudiante = 7;
 
 UPDATE estudiantes SET curso = 'Desarrollo web' WHERE curso = 'Programacion';
+
+-- DELETE --
+
+DELETE FROM estudiantes WHERE id_estudiante = 15;
+
+DELETE FROM estudiantes WHERE edad = 18;
+
+DELETE FROM estudiantes WHERE curso = 'Redes';
+
+DELETE FROM estudiantes WHERE nombres = 'Carlos';
+
+DELETE FROM estudiantes WHERE fecha_registro = '2026-01-15';
