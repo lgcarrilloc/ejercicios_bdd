@@ -47,6 +47,8 @@ SELECT * FROM estudiantes WHERE correo IS NOT NULL;
 
 SELECT nombres, apellidos, curso, correo FROM estudiantes WHERE curso = 'Base de Datos';
 
+SELECT nombres, correo, fecha_registro FROM estudiantes WHERE fecha_registro > '2026-03-01';
+
 -- UPDATE --
 
 UPDATE estudiantes SET curso = 'Inteligencia Artificial' WHERE id_estudiante = 1;
@@ -82,3 +84,13 @@ UPDATE estudiantes SET correo = 'luiscarrillo@hotmail.com' WHERE id_estudiante =
 UPDATE estudiantes SET correo = 'andres.ullauri@gmail.com' WHERE id_estudiante = 4;
 
 UPDATE estudiantes SET correo = 'erick.zapata@gmail.com' WHERE id_estudiante = 5;
+
+-- CONSULTA DE FECHAS--
+
+SELECT * FROM estudiantes WHERE fecha_registro > '2026-02-01';
+
+SELECT * FROM estudiantes WHERE fecha_registro < '2026-05-01';
+
+SELECT * FROM estudiantes WHERE fecha_registro BETWEEN '2026-02-01' AND '2026-04-30';
+
+SELECT * FROM estudiantes WHERE fecha_registro = '2026-03-15';
