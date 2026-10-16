@@ -38,3 +38,17 @@ SELECT * FROM estudiantes WHERE edad > 18;
 SELECT * FROM estudiantes WHERE edad BETWEEN 18 AND 25;
 
 SELECT * FROM estudiantes WHERE fecha_registro > '2026-03-01';
+
+SELECT * FROM estudiantes WHERE fecha_registro BETWEEN '2026-01-01' AND '2026-04-30';
+
+-- UPDATE --
+
+UPDATE estudiantes SET curso = 'Inteligencia Artificial' WHERE id_estudiante = 1;
+
+UPDATE estudiantes SET edad = 25 WHERE id_estudiante = 3;
+
+UPDATE estudiantes SET fecha_registro = '2026-06-15' WHERE id_estudiante = 5;
+
+UPDATE estudiantes SET edad = 33, curso ='Seguridad Informatica' WHERE id_estudiante = 7;
+
+UPDATE estudiantes SET curso = 'Desarrollo web' WHERE curso = 'Programacion';
